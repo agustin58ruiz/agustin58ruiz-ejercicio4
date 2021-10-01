@@ -31,7 +31,7 @@ var mallaDeTriangulos;
 
 var filas=20;
 var columnas=20;
-var superficie = new TuboSenoidal(0.5,0.3,1,3);//Esfera(1);//Plano(3,3);
+var superficie = new Esfera(1);//Plano(3,3);
 
 function crearGeometria(){
         
