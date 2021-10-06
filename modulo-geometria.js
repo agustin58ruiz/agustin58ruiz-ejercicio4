@@ -31,11 +31,31 @@ var mallaDeTriangulos;
 
 var filas=20;
 var columnas=20;
-var superficie = new Esfera(1);//Plano(3,3);
+
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+    function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+  }
+var Figura= getUrlVars()["Forma"];
+
+console.log(Figura);
+if(Figura == "Esfera"){
+    var superficie = new Esfera(1);//
+}else if (Figura == "Plano"){
+    var superficie = new Plano(3,3);
+}else if (Figura == "Fuelle"){
+    var superficie = new TuboSenoidal(0.5,0.3,1,1);//
+}else {
+    var superficie = new Esfera(1);//
+}
 
 function crearGeometria(){
         
-
     superficie3D= superficie;
     mallaDeTriangulos=generarSuperficie(superficie3D,filas,columnas);
     
